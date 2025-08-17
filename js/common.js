@@ -163,21 +163,23 @@ window.onfocus = function () {
 
 console.clear();
 
-//intro_counting
-var memberCountConTxt = 2025;
+//popup
+var target = document.querySelectorAll('.btn_open');
+var btnPopClose = document.querySelectorAll('.modal_wrap .close_btn');
+var targetID;
+console.log(target)
 
-$({ val: 1995 }).animate({ val: memberCountConTxt }, {
-    duration: 4500,
-    step: function () {
-        var num = numberWithCommas(Math.floor(this.val));
-        $(".memberCountCon").text(num);
-    },
-    complete: function () {
-        var num = numberWithCommas(Math.floor(this.val));
-        $(".memberCountCon").text(num);
-    }
-});
+// 팝업 열기
+for (var i = 0; i < target.length; i++) {
+    target[i].addEventListener('click', function () {
+        targetID = this.getAttribute('href');
+        document.querySelector(targetID).style.display = 'block';
+    });
+}
 
-function numberWithCommas(x) {
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "");
+// 팝업 닫기
+for (var j = 0; j < target.length; j++) {
+    btnPopClose[j].addEventListener('click', function () {
+        this.parentNode.parentNode.style.display = 'none';
+    });
 }
