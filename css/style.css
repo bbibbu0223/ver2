@@ -427,6 +427,108 @@ section.main__wrap p{
     opacity: 1;
 }
 
+/* modal */
+.modal_wrap {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(63, 63, 63, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.modal_wrap .close_btn::before {
+  content: "\f00d";
+  display: block;
+  font-size: 20px;
+  color: #333;
+  font-family: "FAS";
+  position: absolute;
+  right: 24px;
+  top: 14px;
+  cursor: pointer;
+}
+.modal_wrap .modal_item {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+  box-shadow: 0px 0px 15px rgba(63, 63, 63, 0.5);
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  z-index: 1000;
+  border-radius: 14px;
+}
+.modal_wrap .modal_text {
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+}
+.modal_wrap .modal_text h3 {
+  font-size: 35px;
+  color: #333;
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.modal_wrap .modal_text h3::after {
+  position: absolute;
+  content: " ";
+  width: 9px;
+  height: 9px;
+  top: 10%;
+  background-color: cornflowerblue;
+  border-radius: 30px;
+}
+.modal_wrap .modal_project {
+  margin-top: 42px;
+  position: relative;
+}
+.modal_wrap .modal_project .modal_content {
+  margin-top: 32px;
+  width: 100%;
+  text-align: justify;
+}
+.modal_wrap .modal_project .modal_content li {
+  line-height: 1.5rem;
+}
+.modal_wrap .modal_project .modal_content h5 {
+  font-size: 20px;
+  color: #333;
+  margin: 12px 0;
+  display: flex;
+}
+.modal_wrap .modal_project .modal_content h5::after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  background-color: cornflowerblue;
+  border-radius: 40px;
+}
+
+.flex{
+    display: flex;
+    gap: 32px;
+    justify-content: space-between;
+}
+
+.line{
+    border-top: 1px solid #9891f9;
+    margin: 16px 0;
+    width: calc(100%/2);
+}
+
+.point{
+    font-weight: 600;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 1440px){
     .about__box .img__box{
         width: 40%;
